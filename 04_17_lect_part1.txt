@@ -1,0 +1,80 @@
+Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 03:03:55) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+==== RESTART: /Users/pconrad/github/ucsb-cs8/LECTURE_04_17/computeGPA.py ====
+>>> 
+==== RESTART: /Users/pconrad/github/ucsb-cs8/LECTURE_04_17/computeGPA.py ====
+>>> grades
+{'courses': [{'course': 'CMPSC 8', 'units': 4, 'grade': 'A'}, {'course': 'MATH 3A', 'units': 4, 'grade': 'B+'}, {'course': 'WRIT 2', 'units': 4, 'grade': 'B-'}]}
+>>> type(grades)
+<class 'dict'>
+>>> grades.keys()
+dict_keys(['courses'])
+>>> list(grades.keys())
+['courses']
+>>> # A dictionary (dict) is a mapping from keys to values
+>>> # The dictionary grades in the file computeGPA.py has one key
+>>> # and that key is "courses"
+>>> # What is the value of that key?
+>>> grades["courses"]
+[{'course': 'CMPSC 8', 'units': 4, 'grade': 'A'}, {'course': 'MATH 3A', 'units': 4, 'grade': 'B+'}, {'course': 'WRIT 2', 'units': 4, 'grade': 'B-'}]
+>>> # The value associated with the key "courses" from the dictionary grades
+>>> # is this thing above.  On the outside it has [  ], and inside it has
+>>> # things separated by commas.  What type of thing is it?
+>>> type(grades["courses"])  # what type is the value associated with "courses"
+<class 'list'>
+>>> x = [ 3, "foo", [4,45], {"one":"uno"}, True ]
+>>> type(x)
+<class 'list'>
+>>> # A list can contain multiple different types of things
+>>> # What makes it a list is that it is multiple things separated by commas
+>>> # and that it has square brackets on the outside.
+>>> grades["courses"]
+[{'course': 'CMPSC 8', 'units': 4, 'grade': 'A'}, {'course': 'MATH 3A', 'units': 4, 'grade': 'B+'}, {'course': 'WRIT 2', 'units': 4, 'grade': 'B-'}]
+>>> # Since that is a list, I can index it.  And I can find out its length
+>>> len(grades["courses"])
+3
+>>> # Since it's length is three, we know that the indexes (or indices)
+>>> # that is, the numbers that are like the "apartment numbers" or
+>>> # "room numbers" of the individual items are 0,1,2
+>>> grades["courses"][0]
+{'course': 'CMPSC 8', 'units': 4, 'grade': 'A'}
+>>> grades["courses"][1]
+{'course': 'MATH 3A', 'units': 4, 'grade': 'B+'}
+>>> grades["courses"][2]
+{'course': 'WRIT 2', 'units': 4, 'grade': 'B-'}
+>>> # All three of the things in our list have the same type
+>>> # In the real world, those things represent courses.
+>>> # What kind of Python thing is, for example grades["courses"][1]
+>>> # which is the thing in Python that represents the student's grade
+>>> # in Math 3A?
+>>> type(grades["courses"][1])
+<class 'dict'>
+>>> x = {1,2,3}
+>>> type(x)
+<class 'set'>
+>>> y = {1:2, 2:4, 3:6}
+>>> type(y)
+<class 'dict'>
+>>> # A dictionary has braces on the outside, and has a collection of
+>>> # mappings from keys to values
+>>> math3a = grades["courses"][1]
+>>> math3a
+{'course': 'MATH 3A', 'units': 4, 'grade': 'B+'}
+>>> math3a["course"]
+'MATH 3A'
+>>> math3a["units"]
+4
+>>> math3a["grades"]
+Traceback (most recent call last):
+  File "<pyshell#44>", line 1, in <module>
+    math3a["grades"]
+KeyError: 'grades'
+>>> math3a["grade"]
+'B+'
+>>> type(math3a["units"])
+<class 'int'>
+>>> type(math3a["grade"])
+<class 'str'>
+>>> 
